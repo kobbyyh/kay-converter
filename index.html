@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KayyConverter </title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional: Add custom CSS for styling -->
+    <link rel="stylesheet" href="./styles.css">
+
+</head>
+
+<body>
+    <!-- Navbar with Bootstrap's navbar-toggler for responsive design -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">KayyConverter</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                onclick="toggleSidebar()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Left Sidebar for Dashboard Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="text-center mb-4">
+            <i class="bi bi-person-circle" style="font-size: 60px; color: #b95050;"></i>
+            <p class="text-white mt-2">Developed by KAY</p>
+        </div>
+        <div class="list-group">
+            <button class="list-group-item list-group-item-action active tabs-button"
+                id="length-tab-button">Length</button>
+            <button class="list-group-item list-group-item-action tabs-button"
+                id="temperature-tab-button">Temperature</button>
+            <button class="list-group-item list-group-item-action tabs-button" id="area-tab-button">Area</button>
+            <button class="list-group-item list-group-item-action tabs-button" id="volume-tab-button">Volume</button>
+            <button class="list-group-item list-group-item-action tabs-button" id="weight-tab-button">Weight</button>
+            <button class="list-group-item list-group-item-action tabs-button" id="time-tab-button">Time</button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+
+        <div id="length-content" class="tab-content  w-75">
+            <div class="container mt-4">
+                <h3>Length Converter</h3>
+                <div class="mb-4">
+                    <!-- Dropdown for "From" unit -->
+                    <label for="lengthUnitFrom">Convert from</label>
+                    <select id="lengthUnitFrom" class="form-select mb-3">
+                        <option value="meter">Meter</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="kilometer">Kilometer</option>
+                    </select>
+
+                    <!-- Textbox for input -->
+                    <input id="lengthInputValue" type="number" class="form-control mb-3" placeholder="Enter value"
+                        oninput="convertLength()" onchange="convertLength()">
+
+                    <!-- Dropdown for "To" unit -->
+                    <label for="lengthUnitTo">Convert to</label>
+                    <select id="lengthUnitTo" class="form-select mb-3" onchange="convertLength()">
+                        <option value="meter">Meter</option>
+                        <option value="centimeter">Centimeter</option>
+                        <option value="kilometer">Kilometer</option>
+                    </select>
+                </div>
+                <p>Converted Value: <span id="lengthOutputValue">0</span></p>
+            </div>
+        </div>
+
+
+        <div id="temperature-content" class="tab-content  w-75" style="display:none;">
+
+            <div class="container mt-4">
+                <h3>Temperature Converter</h3>
+                <div class="mb-4">
+                    <!-- Dropdown for "From" unit -->
+                    <label for="tempUnitFrom">Convert from</label>
+                    <select id="tempUnitFrom" class="form-select mb-3">
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                    </select>
+
+                    <!-- Textbox for input -->
+                    <input id="tempInputValue" type="number" class="form-control mb-3" placeholder="Enter value"
+                        oninput="convertTemperature()" onchange="convertTemperature()">
+
+                    <!-- Dropdown for "To" unit -->
+                    <label for="tempUnitTo">Convert to</label>
+                    <select id="tempUnitTo" class="form-select mb-3" onchange="convertTemperature()">
+                        <option value="celsius">Celsius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                    </select>
+                </div>
+                <p>Converted Value: <span id="tempOutputValue">0</span></p>
+            </div>
+        </div>
+
+
+        <div id="area-content" class="tab-content  w-75" style="display:none;">
+            <div class="container mt-4">
+                <h3>Area Converter</h3>
+                <div class="mb-4">
+                    <!-- Dropdown for "From" unit -->
+                    <label for="areaUnitFrom">Convert from</label>
+                    <select id="areaUnitFrom" class="form-select mb-3">
+                        <option value="squareMeter">Square Meter</option>
+                        <option value="squareKilometer">Square Kilometer</option>
+                        <option value="squareCentimeter">Square Centimeter</option>
+                    </select>
+
+                    <!-- Textbox for input -->
+                    <input id="areaInputValue" type="number" class="form-control mb-3" placeholder="Enter value"
+                        oninput="convertArea()" onchange="convertArea()">
+
+                    <!-- Dropdown for "To" unit -->
+                    <label for="areaUnitTo">Convert to</label>
+                    <select id="areaUnitTo" class="form-select mb-3" onchange="convertArea()">
+                        <option value="squareMeter">Square Meter</option>
+                        <option value="squareKilometer">Square Kilometer</option>
+                        <option value="squareCentimeter">Square Centimeter</option>
+                    </select>
+                </div>
+                <p>Converted Value: <span id="areaOutputValue">0</span></p>
+            </div>
+        </div>
+
+
+        <div id="volume-content" class="tab-content  w-75" style="display:none;">
+            <div class="container mt-4">
+                <h3>Volume Converter</h3>
+                <div class="mb-4">
+                    <!-- Dropdown for "From" unit -->
+                    <label for="volumeUnitFrom">Convert from</label>
+                    <select id="volumeUnitFrom" class="form-select mb-3">
+                        <option value="cubicMeter">Cubic Meter</option>
+                        <option value="liter">Liter</option>
+                        <option value="milliliter">Milliliter</option>
+                    </select>
+
+                    <!-- Textbox for input -->
+                    <input id="volumeInputValue" type="number" class="form-control mb-3" placeholder="Enter value"
+                        oninput="convertVolume()" onchange="convertVolume()">
+
+                    <!-- Dropdown for "To" unit -->
+                    <label for="volumeUnitTo">Convert to</label>
+                    <select id="volumeUnitTo" class="form-select mb-3" onchange="convertVolume()">
+                        <option value="cubicMeter">Cubic Meter</option>
+                        <option value="liter">Liter</option>
+                        <option value="milliliter">Milliliter</option>
+                    </select>
+                </div>
+                <p>Converted Value: <span id="volumeOutputValue">0</span></p>
+            </div>
+        </div>
+
+
+        <div id="weight-content" class="tab-content  w-75" style="display:none;">
+            <!-- Pounds to Kilograms Converter -->
+            <div class="container mt-4">
+                <h3>Weight Converter</h3>
+                <div class="mb-4">
+                    <!-- Dropdown for "From" unit -->
+                    <label for="unitFrom">Convert from</label>
+                    <select id="unitFrom" class="form-select mb-3">
+                        <option value="pounds">Pounds</option>
+                        <option value="kilograms">Kilograms</option>
+                        <option value="grams">Grams</option>
+                    </select>
+
+                    <!-- Textbox for input -->
+                    <input id="inputValue" type="number" class="form-control mb-3" placeholder="Enter value"
+                        oninput="convertUnit()" onchange="convertUnit()">
+
+                    <!-- Dropdown for "To" unit -->
+                    <label for="unitTo">Convert to</label>
+                    <select id="unitTo" class="form-select mb-3" onchange="convertUnit()">
+                        <option value="pounds">Pounds</option>
+                        <option value="kilograms">Kilograms</option>
+                        <option value="grams">Grams</option>
+                    </select>
+                </div>
+                <p>Converted Value: <span id="outputValue">0</span></p>
+            </div>
+        </div>
+
+
+        <div id="time-content" class="tab-content  w-75" style="display:none;">
+            <div class="container mt-4">
+                <h3>Time Converter</h3>
+                <div class="mb-4">
+                    <!-- Dropdown for "From" unit -->
+                    <label for="timeUnitFrom">Convert from</label>
+                    <select id="timeUnitFrom" class="form-select mb-3">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                    </select>
+
+                    <!-- Textbox for input -->
+                    <input id="timeInputValue" type="number" class="form-control mb-3" placeholder="Enter value"
+                        oninput="convertTime()" onchange="convertTime()">
+
+                    <!-- Dropdown for "To" unit -->
+                    <label for="timeUnitTo">Convert to</label>
+                    <select id="timeUnitTo" class="form-select mb-3" onchange="convertTime()">
+                        <option value="seconds">Seconds</option>
+                        <option value="minutes">Minutes</option>
+                        <option value="hours">Hours</option>
+                    </select>
+                </div>
+                <p>Converted Value: <span id="timeOutputValue">0</span></p>
+            </div>
+        </div>
+
+
+
+
+        <footer class="footer">
+        <p>KAYY&copy;  Developed by Kwabena Acheampong</p>
+        </footer>
+    </div>
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
