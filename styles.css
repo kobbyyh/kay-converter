@@ -1,6 +1,9 @@
 body {
   padding-top: 20px;
-  background-color: #f8f9fa;
+  /* background-color: #f8f9fa; */
+  /* background: linear-gradient(120deg, #0f2027, #203a43, #2c5364); */
+    background: linear-gradient(45deg, #1c1c1c, #333);
+
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -37,14 +40,15 @@ body {
 
 .main-content {
   margin-left: 250px;
-  padding: 20px;
+  padding: 50px;
 }
 
 .tab-content {
-  padding: 15px;
+  /* padding: 15px; */
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #fff;
+  align-items: center;
 }
 
 .tab-content h3{
@@ -84,8 +88,7 @@ body {
 
 .footer{
   color: gray;
-  padding-top: 13%;
+  padding-top: 2rem;
   text-align: center;
   font-family:monospace;
-
 }

@@ -23,10 +23,13 @@
 
 <body>
     <!-- Navbar with Bootstrap's navbar-toggler for responsive design -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">KayyConverter</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <a class="navbar-brand" href="https://" style="color:bisque;">
+                <i class="bi bi-person-circle" style="font-size: 20px; color: #b95050;"></i>
+                View Developer
+            </a>
+            <button class="navbar-toggler bg-info" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
                 onclick="toggleSidebar()">
                 <span class="navbar-toggler-icon"></span>
@@ -34,10 +37,37 @@
         </div>
     </nav>
 
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="acheamp.png" style="height: 20px;" alt="Acheampong"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" onclick="toggleSidebar()"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav"> -->
+    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                    onclick="toggleSidebar()">
+                    <span class="navbar-toggler-icon"></span>
+                </button> -->
+    <!-- <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">
+                            <i class="bi bi-person-circle" style="font-size: 20px; color: #b95050;"></i>
+                            View Developer
+                        </a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+
+
+
     <!-- Left Sidebar for Dashboard Navigation -->
     <div class="sidebar" id="sidebar">
         <div class="text-center mb-4">
-            <i class="bi bi-person-circle" style="font-size: 60px; color: #b95050;"></i>
+            <!-- <i class="bi bi-person-circle" style="font-size: 60px; color: #b95050;"></i> -->
+            <img src="acheamp.png" style="height: 20px; " alt="Acheampong">
             <p class="text-white mt-2">Developed by KAY</p>
         </div>
         <div class="list-group">
@@ -55,7 +85,7 @@
     <!-- Main Content Area -->
     <div class="main-content">
 
-        <div id="length-content" class="tab-content  w-75">
+        <div id="length-content" class="tab-content  w-75 mt-5">
             <div class="container mt-4">
                 <h3>Length Converter</h3>
                 <div class="mb-4">
@@ -84,7 +114,7 @@
         </div>
 
 
-        <div id="temperature-content" class="tab-content  w-75" style="display:none;">
+        <div id="temperature-content" class="tab-content  w-75  mt-5" style="display:none;">
 
             <div class="container mt-4">
                 <h3>Temperature Converter</h3>
@@ -112,7 +142,7 @@
         </div>
 
 
-        <div id="area-content" class="tab-content  w-75" style="display:none;">
+        <div id="area-content" class="tab-content  w-75  mt-5" style="display:none;">
             <div class="container mt-4">
                 <h3>Area Converter</h3>
                 <div class="mb-4">
@@ -141,7 +171,7 @@
         </div>
 
 
-        <div id="volume-content" class="tab-content  w-75" style="display:none;">
+        <div id="volume-content" class="tab-content  w-75  mt-5" style="display:none;">
             <div class="container mt-4">
                 <h3>Volume Converter</h3>
                 <div class="mb-4">
@@ -170,7 +200,7 @@
         </div>
 
 
-        <div id="weight-content" class="tab-content  w-75" style="display:none;">
+        <div id="weight-content" class="tab-content  w-75  mt-5" style="display:none;">
             <!-- Pounds to Kilograms Converter -->
             <div class="container mt-4">
                 <h3>Weight Converter</h3>
@@ -200,7 +230,7 @@
         </div>
 
 
-        <div id="time-content" class="tab-content  w-75" style="display:none;">
+        <div id="time-content" class="tab-content  w-75  mt-5" style="display:none;">
             <div class="container mt-4">
                 <h3>Time Converter</h3>
                 <div class="mb-4">
@@ -227,15 +257,15 @@
                 <p>Converted Value: <span id="timeOutputValue">0</span></p>
             </div>
         </div>
-
-
-
-
-        <footer class="footer">
-        <p>KAYY&copy;  Developed by Kwabena Acheampong</p>
-        </footer>
     </div>
 
+    <footer class="footer">
+        <p>KAYY &copy; Developed by <a class="navbar-brand" href="https://" style="color:bisque;">
+                <i class="bi bi-person-circle" style="font-size: 20px; color: #b95050;"></i>
+                 Acheampong
+            </a> </p>
+
+    </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
